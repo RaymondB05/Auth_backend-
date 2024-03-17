@@ -16,6 +16,12 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
     private final UserAuthenticationProvider userAuthenticationProvider;
 
+
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+        String path = request.getRequestURI();
+        return path.startsWith("/h2-console");
+    }
     @Override
     protected void doFilterInternal(
             HttpServletRequest request,

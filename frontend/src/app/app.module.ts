@@ -10,8 +10,10 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { WelcomeContentComponent } from './welcome-content/welcome-content.component';
 import { AuthContentComponent } from './auth-content/auth-content.component';
 import { ContentComponent } from './content/content.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { AxiosService } from './axios.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AxiosService } from './axios.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+     MatSlideToggleModule
   ],
   providers: [AxiosService],
   bootstrap: [AppComponent]
